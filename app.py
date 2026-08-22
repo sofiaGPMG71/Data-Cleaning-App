@@ -84,6 +84,16 @@ CUSTOM_CSS = """
         border-radius: 10px;
         padding: 0.9rem 0.8rem 0.6rem 0.8rem;
     }
+    /* Force readable text inside metric cards regardless of the viewer's
+       light/dark theme setting -- the card background is always light,
+       so the text must always be dark. */
+    div[data-testid="stMetric"] label,
+    div[data-testid="stMetric"] label p {
+        color: #4b5563 !important;
+    }
+    div[data-testid="stMetric"] div[data-testid="stMetricValue"] {
+        color: #111827 !important;
+    }
 </style>
 """
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
